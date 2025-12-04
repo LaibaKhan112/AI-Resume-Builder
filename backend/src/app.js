@@ -11,7 +11,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-   origin: ["http://localhost:5173", "http://127.0.0.1:5173"],// your frontend URL
+   origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://ai-resume-builder-h7fq.onrender.com"],// your frontend URL
    credentials: true,                // allow cookies/token headers
 }));
 
