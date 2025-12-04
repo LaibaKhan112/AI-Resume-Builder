@@ -40,13 +40,13 @@ const ModernTemplate = ({ data, accentColor }) => {
 					{data.personal_info?.linkedin && (
 						<a target="_blank" href={data.personal_info?.linkedin} className="flex items-center gap-2">
 							<Linkedin className="size-4" />
-							<span className="break-all text-xs">{data.personal_info.linkedin.split("https://www.")[1] ? data.personal_info.linkedin.split("https://www.")[1] : data.personal_info.linkedin}</span>
+							<span className="break-normal text-xs">{data.personal_info.linkedin.split("https://www.")[1] ? data.personal_info.linkedin.split("https://www.")[1] : data.personal_info.linkedin}</span>
 						</a>
 					)}
 					{data.personal_info?.website && (
 						<a target="_blank" href={data.personal_info?.website} className="flex items-center gap-2">
 							<Globe className="size-4" />
-							<span className="break-all text-xs">{data.personal_info.website.split("https://")[1] ? data.personal_info.website.split("https://")[1] : data.personal_info.website}</span>
+							<span className="break-normal text-xs">{data.personal_info.website.split("https://")[1] ? data.personal_info.website.split("https://")[1] : data.personal_info.website}</span>
 						</a>
 					)}
 				</div>
@@ -59,7 +59,7 @@ const ModernTemplate = ({ data, accentColor }) => {
 						<h2 className="text-2xl font-light mb-4 pb-2 border-b border-gray-200">
 							Professional Summary
 						</h2>
-						<p className="text-gray-700  leading-relaxed whitespace-pre-line break-all">{data.professional_summary}</p>
+						<p className="text-gray-700  leading-relaxed whitespace-pre-line break-normal">{data.professional_summary}</p>
 					</section>
 				)}
 
@@ -84,7 +84,7 @@ const ModernTemplate = ({ data, accentColor }) => {
 										</div>
 									</div>
 									{exp.description && (
-										<div className="text-gray-700 leading-relaxed mt-3  whitespace-pre-line break-all">
+										<div className="text-gray-700 leading-relaxed mt-3  whitespace-pre-line break-normal">
 											{exp.description}
 										</div>
 									)}
@@ -124,7 +124,7 @@ const ModernTemplate = ({ data, accentColor }) => {
           </div>
 
           {p.description && (
-            <div className="text-gray-700 leading-relaxed text-sm mt-3 whitespace-pre-line break-all">
+            <div className="text-gray-700 leading-relaxed text-sm mt-3 whitespace-pre-line break-normal">
               {p.description}
             </div>
           )}

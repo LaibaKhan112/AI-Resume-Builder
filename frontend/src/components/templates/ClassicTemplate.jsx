@@ -40,13 +40,13 @@ const ClassicTemplate = ({ data, accentColor }) => {
                     {data.personal_info?.linkedin && (
                         <div className="flex items-center gap-1">
                             <Linkedin className="size-4" />
-                            <span className="break-all">{data.personal_info.linkedin}</span>
+                            <span className="break-normal">{data.personal_info.linkedin}</span>
                         </div>
                     )}
                     {data.personal_info?.website && (
                         <div className="flex items-center gap-1">
                             <Globe className="size-4" />
-                            <span className="break-all">{data.personal_info.website}</span>
+                            <span className="break-normal">{data.personal_info.website}</span>
                         </div>
                     )}
                 </div>
@@ -58,7 +58,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
                     <h2 className="text-xl font-semibold mb-3 " style={{ color: accentColor }}>
                         PROFESSIONAL SUMMARY
                     </h2>
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line break-all">{data.professional_summary}</p>
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line break-normal">{data.professional_summary}</p>
                 </section>
             )}
 
@@ -82,7 +82,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
                                     </div>
                                 </div>
                                 {exp.description && (
-                                    <div className="text-gray-700 leading-relaxed whitespace-pre-line break-all">
+                                    <div className="text-gray-700 leading-relaxed whitespace-pre-line break-normal">
                                         {exp.description}
                                     </div>
                                 )}
@@ -116,7 +116,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
             </li>
 
             {proj.description && (
-              <p className="text-gray-600 mt-1 leading-relaxed whitespace-pre-line break-all">
+              <p className="text-gray-600 mt-1 leading-relaxed whitespace-pre-line break-normal">
                 {proj.description}
               </p>
             )}

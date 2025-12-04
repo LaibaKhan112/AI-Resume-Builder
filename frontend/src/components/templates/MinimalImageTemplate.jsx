@@ -114,7 +114,7 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                             <h2 className="text-sm font-semibold tracking-widest mb-3" style={{ color: accentColor }} >
                                 SUMMARY
                             </h2>
-                            <p className="text-zinc-700 leading-relaxed wrap-break-word whitespace-pre-line">
+                            <p className="text-zinc-700 leading-relaxed wrap-break-normal whitespace-pre-line">
                                 {data.professional_summary}
                             </p>
                         </section>
@@ -142,7 +142,7 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                                             {exp.company}
                                         </p>
                                         {exp.description && (
-                                            <ul className="list-disc list-inside text-sm text-zinc-700 leading-relaxed whitespace-pre-line break-all space-y-1">
+                                            <ul className="list-disc list-inside text-sm text-zinc-700 leading-relaxed whitespace-pre-line break-normal space-y-1">
                                                 {exp.description.split("\n").map((line, i) => (
                                                     <li key={i}>{line}</li>
                                                 ))}
@@ -179,7 +179,7 @@ const MinimalImageTemplate = ({ data, accentColor }) => {
                                         )}
 
                                         {project.description && (
-                                            <ul className="list-disc list-inside text-sm text-zinc-700 space-y-1 leading-relaxed whitespace-pre-line break-all">
+                                            <ul className="list-disc list-inside text-sm text-zinc-700 space-y-1 leading-relaxed whitespace-pre-line break-normal">
                                                 {project.description.split("\n").map((line, i) => (
                                                     <li key={i}>{line}</li>
                                                 ))}

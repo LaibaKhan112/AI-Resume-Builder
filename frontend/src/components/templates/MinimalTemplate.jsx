@@ -22,10 +22,10 @@ const MinimalTemplate = ({ data, accentColor }) => {
                     {data.personal_info?.phone && <span>{data.personal_info.phone}</span>}
                     {data.personal_info?.location && <span>{data.personal_info.location}</span>}
                     {data.personal_info?.linkedin && (
-                        <span className="break-all">{data.personal_info.linkedin}</span>
+                        <span className="break-normal">{data.personal_info.linkedin}</span>
                     )}
                     {data.personal_info?.website && (
-                        <span className="break-all">{data.personal_info.website}</span>
+                        <span className="break-normal">{data.personal_info.website}</span>
                     )}
                 </div>
             </header>
@@ -33,7 +33,7 @@ const MinimalTemplate = ({ data, accentColor }) => {
             {/* Professional Summary */}
             {data.professional_summary && (
                 <section className="mb-10">
-                    <p className=" text-gray-700 leading-relaxed whitespace-pre-line break-all">
+                    <p className=" text-gray-700 leading-relaxed whitespace-pre-line break-normal">
                         {data.professional_summary}
                     </p>
                 </section>
@@ -57,7 +57,7 @@ const MinimalTemplate = ({ data, accentColor }) => {
                                 </div>
                                 <p className="text-gray-600 mb-2">{exp.company}</p>
                                 {exp.description && (
-                                    <div className="text-gray-700 leading-relaxed whitespace-pre-line break-all">
+                                    <div className="text-gray-700 leading-relaxed whitespace-pre-line break-normal">
                                         {exp.description}
                                     </div>
                                 )}
@@ -89,7 +89,7 @@ const MinimalTemplate = ({ data, accentColor }) => {
                                 )}
 
                                 {proj.description && (
-                                    <div className="text-gray-600 leading-relaxed whitespace-pre-line break-all">
+                                    <div className="text-gray-600 leading-relaxed whitespace-pre-line break-normal">
                                         {proj.description}
                                     </div>
                                 )}
