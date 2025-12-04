@@ -15,7 +15,7 @@ import {
   Sparkles,
   User
 } from 'lucide-react'
-import PersonalInfo from '../components/personalInfo'
+import PersonalInfo from '../components/PersonalInfo'
 import ResumePreview from '../components/ResumePreview'
 import TemplateSelector from '../components/TemplateSelector'
 import ColorPicker from '../components/ColorPicker'
