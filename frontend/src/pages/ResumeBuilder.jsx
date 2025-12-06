@@ -34,6 +34,9 @@ const ResumeBuilder = () => {
   const navigate = useNavigate()
   const resumeRef = useRef(null)
   const [saving, setSaving] = useState(false)
+ 
+const [isSharing, setIsSharing] = useState(false);
+
 
   const [resumeData, setResumeData] = useState({
     _id: '',
@@ -119,18 +122,43 @@ const ResumeBuilder = () => {
     }
   }
 
-  const handleShare = () => {
-    if (!resumeId) return
+  const handleShare = async () => {
+  if (!resumeId || isSharing) return;
 
-    const frontendUrl = window.location.href.split('/app/')[0]
-    const resumeUrl = `${frontendUrl}/view/${resumeId}`
+  // use origin so it works both on localhost and Render
+  const frontendUrl = window.location.origin;
+  const resumeUrl = `${frontendUrl}/view/${resumeId}`;
 
-    if (navigator.share) {
-      navigator.share({ url: resumeUrl, text: 'My Resume' })
-    } else {
-      alert('Share not supported on this browser.')
+  // Web Share API available?
+  if (navigator.share) {
+    try {
+      setIsSharing(true);
+      await navigator.share({
+        title: 'My Resume',
+        text: 'Check out my resume',
+        url: resumeUrl,
+      });
+    } catch (err) {
+      // User cancelled – ignore AbortError, log other errors
+      if (err.name !== 'AbortError') {
+        console.error('Share error:', err);
+        alert('Unable to share. Please try again or copy the link.');
+      }
+    } finally {
+      setIsSharing(false);
+    }
+  } else {
+    // Fallback: copy to clipboard
+    try {
+      await navigator.clipboard.writeText(resumeUrl);
+      alert('Link copied to clipboard!');
+    } catch (err) {
+      console.error('Clipboard error:', err);
+      alert(`Share URL: ${resumeUrl}`);
     }
   }
+};
+
 
   const downloadResume = useReactToPrint({
     contentRef: resumeRef,
